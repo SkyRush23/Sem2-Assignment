@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thomas | Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+{% if request.args.get('success') %}
+<div id="popup">Message sent successfully!</div>
+{% endif %}
+    <!-- Hero Section -->
+    <section id="hero">
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile Picture" class="profile-pic">
+       <h1 class="fade-in">Hi, I'm Thomas M Thomas!</h1>
+<p class="fade-in-delay">
+    BCA Data Analytics Student
+    <br>
+    at Kristu Jayanti University, Bangalore</p>
+        <a href="#about" class="btn">Explore</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="reveal">
+        <h2>About Me</h2>
+        <p>
+           Currently pursuing my Bachelor's in Computer Applications with a specialisation in Data Analytics at Kristu Jayanti University, Bangalore, where I’m developing my skills in programming, databases and analytical thinking.
+            Alongside my academics, I actively try to stay up to date with the fast evolving IT industry by exploring and learning about newer technologies. Data analysis, machine learning, and problem-solving are my main areas of interest.
+            In my spare time I enjoy interacting with tech communities, helping people on the internet with tech support, experimenting with new tools and dabble in a bit of creative media.
+            Presently, I’m expanding my skills in SQL, Python and data visualisation tools like Qlik and MongoDB, while also exploring areas like cloud computing and artificial intelligence.
+        </p>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="reveal">
+        <h2>Certifications</h2>
+
+       <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert1.jpg') }}" alt="Udemy Certification">
+            <h3>Udemy - Git Certification</h3>
+        </div>
+
+         <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert11.jpg') }}" alt="Udemy Certification">
+            <h3>Udemy - NodeJS Certification</h3>
+        </div>
+
+        <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert3.jpg') }}" alt="MongoDB Certification">
+            <h3>MongoDB - Introduction Certification</h3>
+        </div>
+
+        <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert2.jpg') }}" alt="Celonis Process Mining Certification">
+            <h3>Celonis - Process Mining Certification</h3>
+        </div>
+
+        <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert12.jpg') }}" alt="Celonis Certification">
+            <h3>Celonis - Foundations Certification</h3>
+        </div>
+
+        <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert5.jpg') }}" alt="Microsoft Certification">
+            <h3>Microsoft - Copilot Certification</h3>
+        </div>
+
+        <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert13.jpg') }}" alt="Microsoft Certification">
+            <h3>Microsoft - Generative AI Certification</h3>
+        </div>
+
+        <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert6.jpg') }}" alt="AWS Certification">
+            <h3>AWS - Generative AI Certification</h3>
+        </div>
+
+        <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert7.jpg') }}" alt="Nasscom Certification">
+            <h3>Nasscom - Digital Engineering Certification</h3>
+        </div>
+
+        <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert8.jpg') }}" alt="Qlik Certification">
+            <h3>Qlik - Data Analytics Certification</h3>
+        </div>
+
+        <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert9.jpg') }}" alt="Qlik Certification">
+            <h3>Qlik - Data Literacy Certification</h3>
+        </div>
+
+        <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert4.jpg') }}" alt="Infosys Certification">
+            <h3>Infosys - Front End Web Developer Certification</h3>
+        </div>
+
+        <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert10.jpg') }}" alt="Infosys Certification">
+            <h3>Infosys - HTML5 Certification</h3>
+        </div>
+
+        <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert14.jpg') }}" alt="Infosys Certification">
+            <h3>Infosys - CSS3 Certification</h3>
+        </div>
+
+        <div class="card certificate-card">
+            <img src="{{ url_for('static', filename='images/cert15.jpg') }}" alt="Infosys Certification">
+            <h3>Infosys - JavaScript Certification</h3>
+        </div>
+
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="reveal">
+        <h2>Projects</h2>
+
+        <a href="http://127.0.0.1:5000/" target="_blank" class="project-link">
+            <div class="card">
+                <h3>Full Stack Portfolio Website</h3>
+                <p>
+                A single-page responsive website built using HTML, CSS and JavaScript.
+                Backend developed using Flask and connected to MongoDB.
+                </p>
+            </div>
+        </a>
+
+        <a href="https://github.com/SkyRush23/Sem2-Assignment" target="_blank" class="project-link">
+            <div class="card">
+                <h3>Mini Database App</h3>
+                <p>Simple CRUD app using Flask and MongoDB.</p>
+            </div>
+        </a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="reveal">
+        <h2>Contact Me</h2>
+
+        <form method="POST" action="/submit">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    
+</body>
+
+<nav class="navbar">
+    <div class="logo">Portfolio</div>
+    <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+</html>
