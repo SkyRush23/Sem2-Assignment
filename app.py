@@ -1,10 +1,12 @@
+import os
+from pymongo import MongoClient
 from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 
 app = Flask(__name__)
 
 # MongoDB Connection
-client = MongoClient("mongodb+srv://25bcnb53:POKE_neil#mongodb@kjus2cluster.xouj5lw.mongodb.net/?appName=KJUs2Cluster")
+client = MongoClient(os.environ.get("MONGO_URI"))
 db = client["PortfolioDB"]
 collection = db["Contacts"]
 
