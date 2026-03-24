@@ -1,4 +1,3 @@
-// Cache elements once (better performance)
 const reveals = document.querySelectorAll(".reveal");
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-links a");
@@ -9,7 +8,6 @@ window.addEventListener("scroll", () => {
   updateActiveNav();
 });
 
-// Reveal elements on scroll (with toggle)
 function revealOnScroll() {
   const windowHeight = window.innerHeight;
   const elementVisible = 100;
@@ -25,7 +23,6 @@ function revealOnScroll() {
   });
 }
 
-// Update active navbar link
 function updateActiveNav() {
   let current = "";
 
@@ -33,7 +30,6 @@ function updateActiveNav() {
     const rect = section.getBoundingClientRect();
     const navHeight = document.querySelector(".navbar").offsetHeight;
 
-    // Check if section top is above the navbar + 50px
     if (rect.top <= navHeight + 50 && rect.bottom >= navHeight + 50) {
       current = section.getAttribute("id");
     }
@@ -59,7 +55,5 @@ function type() {
 }
 
 type();
-
-// Run once on page load (important!)
 revealOnScroll();
 updateActiveNav();
