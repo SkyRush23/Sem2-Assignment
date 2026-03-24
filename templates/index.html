@@ -9,14 +9,26 @@
 </head>
 
 <body>
+    
+    <nav class="navbar">
+    <div class="logo">&lt;Coding Portfolio/&gt;</div>
+    <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
 {% if request.args.get('success') %}
 <div id="popup">Message sent successfully!</div>
 {% endif %}
     <!-- Hero Section -->
     <section id="hero">
         <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile Picture" class="profile-pic">
-       <h1 class="fade-in">Hi, I'm Thomas M Thomas!</h1>
-<p class="fade-in-delay">
+       <h1 class="fade-in" id="typing"></h1>
+<p class="reveal">
     BCA Data Analytics Student
     <br>
     at Kristu Jayanti University, Bangalore</p>
@@ -152,16 +164,5 @@
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     
 </body>
-
-<nav class="navbar">
-    <div class="logo">Portfolio</div>
-    <ul class="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
 
 </html>

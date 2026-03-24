@@ -207,6 +207,15 @@ button:hover {
     position: relative;
 }
 
+.nav-links a.active {
+    color: #a084ff;
+}
+
+/* underline stays visible when active */
+.nav-links a.active::after {
+    width: 100%;
+}
+
 /* Underline hover animation */
 .nav-links a::after {
     content: "";
